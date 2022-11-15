@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import ExhibitCard from '../components/ExhibitCard'
 
 const Exhibits = () => {
+  let navigate = useNavigate()
   const [exhibits, setExhibits] = useState([])
 
   useEffect(() => {
@@ -14,6 +15,10 @@ const Exhibits = () => {
     handleExhibits()
   }, [])
 
+  const viewAnimals = (id) => {
+    navigate(`${id}`)
+  }
+
   return (
     <div className="grid col-4">
       {exhibits.map((exhibit) => (
@@ -21,6 +26,7 @@ const Exhibits = () => {
           key={exhibit.id}
           name={exhibit.name}
           image={exhibit.image}
+          onClick={() => viewAnimals(exhibit.id)}
         />
       ))}
     </div>

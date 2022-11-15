@@ -8,6 +8,7 @@ const Home = () => {
 
   return (
     <div className="home-container col">
+      <div>Welcome to Of Birds and Beasts</div>
       <section className="welcome-signin">
         <button onClick={() => navigate('/signin')}>
           Click Here To Sign-In
