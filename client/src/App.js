@@ -60,6 +60,7 @@ const App = () => {
           />
           <Route path="/exhibit" element={<Exhibits />} />
           <Route path="/animal" element={<Animals />} />
+          <Route path="/exhibit/:id" element={<AnimalCard />} />
         </Routes>
       </main>
     </div>
