@@ -3,7 +3,7 @@ import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/Auth'
 
-const Register = (props) => {
+const Register = ({ setUser, toggleAuthenticated }) => {
   let navigate = useNavigate()
   const [formValues, setFormValues] = useState({
     name: '',
