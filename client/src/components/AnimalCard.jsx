@@ -9,8 +9,8 @@ const AnimalDisplay = ({onClick, animal, name, image, species, information}) => 
             <div className="info-wrapper flex-col">
                 <h3 className="runDateDisplay"> name: {name}</h3>
                 <p className="cardDisplay">image: {image}</p>
-                <p className="cardDisplay"> Species: {species} </p>
-                <p className="cardDisplay">Information: {information}</p>
+                {/* <p className="cardDisplay"> Species: {species} </p>
+                <p className="cardDisplay">Information: {information}</p> */}
             </div>
 
         </div>

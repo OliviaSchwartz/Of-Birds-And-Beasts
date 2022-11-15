@@ -8,7 +8,9 @@ const ExhibitDisplay = ({onClick, name, image, exhibit}) => {
         <div className="card exhibit-card"onClick={() => onClick(exhibit)}  >
             <div className="info-wrapper flex-col">
                 <h3 className="runDateDisplay"> {name}</h3>
-                <p className="cardDisplay">{image}</p>
+                <img className="cardDisplay" src={image} />
+                <button>View Animals</button>
+                <button>Add To Schedule</button>
             </div>
 
         </div>
