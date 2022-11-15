@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
 
 :root {
-  --primary-bg: #000411;
-  --link-color-primary: #aeb7b3;
-  --secondary-bg: #e1efe6;
-  --link-color-secondary: #e1efe6;
-  --primary-button-hover: #160c28;
+  --primary-bg: #091e00;
+  --link-color-primary: #a15e00;
+  --secondary-bg: #5f904b;
+  --link-color-secondary: #f38d00;
+  --primary-button-hover: #4a2a00;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Boogaloo', sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--secondary-bg);
@@ -44,6 +44,7 @@ header {
 nav {
   margin-right: 1em;
   display: flex;
+
 }
 
 nav a,
@@ -184,3 +185,49 @@ form button:disabled {
   align-items: center;
   height: 80vh;
 }
+.animals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.animal-card{
+  width: 90%;
+  min-height: 300px;
+  background-color: var(--primary-bg);
+  color: var(--secondary-bg);
+  border-radius: 8px;
+  margin:1em;
+  padding: 1em;
+}
+
+.item1 {
+  grid-area: name;
+  font-size: 1.8em;
+  text-shadow: 2px 2px 5px var(--link-color-primary);
+}
+.item2 {
+  grid-area: image;
+  max-height: 15em;
+  max-width: 15em;
+  border: 3px solid var(--secondary-bg);
+  border-radius: 10px;
+}
+.item3 {
+  grid-area: species;
+  font-size: 1em;
+}
+.item4 {
+  grid-area: info;
+  font-size: 1.3em;
+}
+
+.animal-info-wrapper {
+  display: grid;
+  grid: 'name species'
+        'image info';
+  grid-gap: 2em;
+  align-items: center;
+  text-align: center;
+}
+
