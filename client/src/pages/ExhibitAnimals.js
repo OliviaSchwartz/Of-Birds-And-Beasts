@@ -17,7 +17,7 @@ const ExhibitAnimals = () => {
   }, [])
 
   return (
-    <div>
+    <div className="animals">
       {animals.map((animal) => (
         <AnimalCard
           key={animal.id}
