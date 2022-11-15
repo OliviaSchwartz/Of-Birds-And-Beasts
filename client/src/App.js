@@ -11,6 +11,7 @@ import Exhibits from './pages/Exhibits'
 import Animals from './pages/Animals'
 import ExhibitCard from './components/ExhibitCard'
 import AnimalCard from './components/AnimalCard'
+import ExhibitAnimals from './pages/ExhibitAnimals'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -60,7 +61,7 @@ const App = () => {
           />
           <Route path="/exhibit" element={<Exhibits />} />
           <Route path="/animal" element={<Animals />} />
-          <Route path="/exhibit/:id" element={<AnimalCard />} />
+          <Route path="/exhibit/:id" element={<ExhibitAnimals />} />
         </Routes>
       </main>
     </div>
