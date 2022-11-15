@@ -25,13 +25,17 @@ const App = () => {
 
   const checkToken = async () => {
     const user = await CheckSession()
+    console.log('This is check token', user)
     setUser(user)
     toggleAuthenticated(true)
   }
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    if (token) checkToken()
+    if (token) {
+      console.log('Inside useEffect')
+      checkToken()
+    }
   }, [])
 
   return (

@@ -8,3 +8,12 @@ export const GetSchedules = async () => {
     throw error
   }
 }
+
+export const CreateSchedules = async (data, id) => {
+  try {
+    const res = await Client.post(`/schedule/${id}`, data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
