@@ -23,6 +23,8 @@ const ExhibitAnimals = () => {
           key={animal.id}
           name={animal.name}
           image={animal.image}
+          species={animal.species}
+          information={animal.information}
           // onClick={() => viewAnimals(exhibit.id)}
         />
       ))}
