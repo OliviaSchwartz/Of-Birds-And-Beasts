@@ -7,6 +7,10 @@ import Schedule from './pages/Schedule'
 import Home from './pages/Home'
 import './App.css'
 import { useState, useEffect } from 'react'
+import Exhibits from './pages/Exhibits'
+import Animals from './pages/Animals'
+import ExhibitCard from './components/ExhibitCard'
+import AnimalCard from './components/AnimalCard'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -54,6 +58,8 @@ const App = () => {
             path="/schedule"
             element={<Schedule user={user} authenticated={authenticated} />}
           />
+          <Route path="/exhibit" element={<Exhibits />} />
+          <Route path="/animal" element={<Animals />} />
         </Routes>
       </main>
     </div>
