@@ -3,20 +3,20 @@ import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { UpdateSchedule, GetSchedules } from "../services/ScheduleServices"
 
-const ExhibitDisplay = ({setSchedule, schedule_Id, onClick, name, image, exhibit}) => {
+const ExhibitDisplay = ({setSchedule, onClick, name, image, exhibit, schedule, scheduleExists, setScheduleExists}) => {
 
 
     const addToSchedule = async (e) => {
         e.preventDefault()
 
         const validateSchedule = async () => {
-          if (schedule_Id === undefined) {
+          if (scheduleExists = false)  {
             alert('Create your schedule first, then add exhibits')
           } else {
             const newExhibit = await UpdateSchedule(exhibit),
              updateSchedule = await GetSchedules()
             console.log(updateSchedule)
-            setSchedule(updateSchedule.data)
+            setSchedule( updateSchedule.data)
           }
         }
         validateSchedule()

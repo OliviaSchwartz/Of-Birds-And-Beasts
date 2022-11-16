@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-const SignIn = ({ setUser, toggleAuthenticated }) => {
+const SignIn = ({ setUser, toggleAuthenticated, user }) => {
+  let { id } = useParams()
   let navigate = useNavigate()
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
@@ -16,7 +18,7 @@ const SignIn = ({ setUser, toggleAuthenticated }) => {
     setFormValues({ email: '', password: '' })
     setUser(payload)
     toggleAuthenticated(true)
-    navigate('/schedule')
+    navigate(`/schedule/`)
     window.location.reload()
   }
 

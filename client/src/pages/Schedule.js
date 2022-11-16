@@ -1,15 +1,28 @@
 import { useEffect, useState } from 'react'
-import { GetSchedules, CreateSchedules } from '../services/ScheduleServices'
+import {
+  GetSchedules,
+  CreateSchedules,
+  GetScheduleById
+} from '../services/ScheduleServices'
 import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-const Schedule = ({ user, authenticated }) => {
+const Schedule = ({
+  user,
+  authenticated,
+  setSchedule,
+  schedule,
+  scheduleExists,
+  setScheduleExists
+}) => {
   const initialState = {
     date: ''
   }
+  let { id } = useParams()
   let navigate = useNavigate()
   const [formState, setFormState] = useState(initialState)
-  const [scheduleExists, setScheduleExists] = useState(false)
-  const [schedule, setSchedule] = useState({})
+  // const [scheduleExists, setScheduleExists] = useState(false)
+  // const [schedule, setSchedule] = useState({})
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
