@@ -18,8 +18,8 @@ body {
 button {
   border: 0;
   cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 0.8em 1.2em;
+  transition: all 0.3s ease;
+  padding: 1em 1.5em;
   font-size: 1.1rem;
 }
 
@@ -29,10 +29,11 @@ input {
 }
 
 header {
-  max-height: 4em;
+  height: 3em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row-reverse;
   background-color: var(--primary-bg);
 }
 
@@ -44,7 +45,8 @@ header {
 nav {
   margin-right: 1em;
   display: flex;
-
+  flex-direction: row-reverse;
+  font-size: 1.2em;
 }
 
 nav a,
@@ -110,7 +112,7 @@ main {
 }
 
 .card-overlay {
-  /* border: 2px solid var(--primary-button-hover); */
+  border: 2px solid var(--primary-button-hover);
   width: 60%;
   padding: 1em;
   border-radius: 8px;
@@ -182,10 +184,15 @@ form button:disabled {
   color: var(--secondary-bg);
   border-radius: 8px;
   padding: 1em;
+  margin-bottom: 1em;
 }
 
 .card img {
   width: 100%;
+  max-height: 11em;
+}
+.runDateDisplay {
+  font-size: 2em;
 }
 
 .protected {
@@ -194,6 +201,29 @@ form button:disabled {
   justify-content: center;
   align-items: center;
   height: 80vh;
+}
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardDisplayExhibit {
+
+  max-height: 20em;
+  max-width: 20em;
+  border: 3px solid var(--secondary-bg);
+  border-radius: 10px;
+  margin: 1em;
+
+}
+.exhibit-button {
+  margin: 1em;
+  background-color: var(--primary-button-hover);
+  color: var(--link-color-secondary);
+  align-self: center;
+  width: 80%;
+  font-family: 'Boogaloo';
+  font-size: 1.3em;
 }
 .animals {
   display: flex;
@@ -213,8 +243,9 @@ form button:disabled {
 
 .item1 {
   grid-area: name;
-  font-size: 1.8em;
+  font-size: 2em;
   text-shadow: 2px 2px 5px var(--link-color-primary);
+  text-align: left;
 }
 .item2 {
   grid-area: image;
@@ -225,11 +256,11 @@ form button:disabled {
 }
 .item3 {
   grid-area: species;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 .item4 {
   grid-area: info;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .animal-info-wrapper {
@@ -240,4 +271,3 @@ form button:disabled {
   align-items: center;
   text-align: center;
 }
-
