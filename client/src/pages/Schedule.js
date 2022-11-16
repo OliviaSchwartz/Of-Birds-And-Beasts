@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import {
   GetSchedules,
   CreateSchedules,
-  GetScheduleById
+  GetSchedulesById
 } from '../services/ScheduleServices'
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
@@ -39,11 +39,12 @@ const Schedule = ({
   }
 
   useEffect(() => {
-    const handleSchedule = async () => {
-      const data = await GetSchedules()
+    const handleSchedule = async (id) => {
+      console.log(id)
+      const data = await GetSchedulesById(id)
       setSchedule(data)
     }
-    handleSchedule()
+    handleSchedule(user.id)
   }, [])
 
   const viewSchedules = (id) => {

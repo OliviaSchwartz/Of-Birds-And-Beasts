@@ -9,7 +9,7 @@ export const GetSchedules = async () => {
   }
 }
 
-export const GetScheduleById = async (id) => {
+export const GetSchedulesById = async (id) => {
   try {
     const res = await Client.get(`/schedule/${id}`)
     return res.data

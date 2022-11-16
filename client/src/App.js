@@ -11,6 +11,7 @@ import Exhibits from './pages/Exhibits'
 import Animals from './pages/Animals'
 import ExhibitCard from './components/ExhibitCard'
 import AnimalCard from './components/AnimalCard'
+import ScheduleCard from './components/ScheduleCard'
 import ExhibitAnimals from './pages/ExhibitAnimals'
 import { NavLink } from 'react-router-dom'
 
@@ -77,7 +78,7 @@ const App = () => {
           />
           <Route
             path="/schedule/:id"
-            element={<Schedule user={user} authenticated={authenticated} />}
+            element={<ScheduleCard user={user} authenticated={authenticated} />}
           />
           <Route
             path="/exhibit"
