@@ -72,7 +72,10 @@ const App = () => {
               />
             }
           />
-          <Route path="/exhibit" element={<Exhibits />} />
+          <Route
+            path="/exhibit"
+            element={<Exhibits setSchedule={setSchedule} schedule={schedule} />}
+          />
           <Route path="/animal" element={<Animals />} />
           <Route path="/exhibit/:id" element={<ExhibitAnimals />} />
         </Routes>

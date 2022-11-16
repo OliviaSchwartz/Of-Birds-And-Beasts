@@ -17,3 +17,12 @@ export const CreateSchedules = async (data, id) => {
     throw error
   }
 }
+
+export const UpdateSchedule = async (data, id) => {
+  try {
+    const res = await Client.put(`/schedule/${id}`, data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
