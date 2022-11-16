@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { GetSchedules, CreateSchedules } from '../services/ScheduleServices'
 import { useNavigate } from 'react-router-dom'
 
-const Schedule = () => {
+const Schedule = ({ user, authenticated }) => {
   const initialState = {
     date: ''
   }
@@ -49,7 +49,7 @@ const Schedule = () => {
       </div>
     )
   } else {
-    return (
+    return user && authenticated ? (
       <div className="schedule-text section-title">
         {' '}
         CREATE A SCHEDULE
@@ -71,6 +71,11 @@ const Schedule = () => {
             Create Schedule
           </button>
         </form>
+      </div>
+    ) : (
+      <div className="protected">
+        <h3>Oops! You must be signed in to do that!</h3>
+        <button onClick={() => navigate('/signin')}>Sign In</button>
       </div>
     )
   }
@@ -96,4 +101,48 @@ export default Schedule
 //     <button onClick={() => navigate('/signin')}>Sign In</button>
 //   </div>
 // )
+// }
+
+// if (scheduleExists) {
+//   return (
+//     <div className="schedule-text">
+//       <div className="section-title">SCHEDULE </div>
+//       <div>Date: {schedule.date} </div>
+//       <br />
+//       <div className="exhibit-list">
+//         <div className="exhbit-title">Scheduled Exhibits </div>
+//         {schedule?.exhibits?.map((exhibit) => (
+//           <p>{exhibit.name}</p>
+//         ))}
+//       </div>
+//       <button>Delete Schedule</button>
+//       <button>View Exhibits</button>
+//     </div>
+//   )
+// } else {
+//   return ( user && authenticated) ? (
+//     <div className="schedule-text section-title">
+//       {' '}
+//       CREATE A SCHEDULE
+//       <form className="form" onSubmit={handleSubmit}>
+//         <label className="label dateField" htmlFor="date">
+//           Date:{' '}
+//         </label>
+//         <input
+//           className="input"
+//           type="text"
+//           id="date"
+//           placeholder="MM/DD/YY (Required)"
+//           cols="30"
+//           onChange={handleChange}
+//           value={formState.date}
+//           required
+//         />
+//         <button className="submit-button" type="submit">
+//           Create Schedule
+//         </button>
+//       </form>
+//     </div>
+//   )
+// }
 // }
