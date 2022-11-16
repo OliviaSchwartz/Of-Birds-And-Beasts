@@ -17,7 +17,7 @@ const Schedule = ({ user, authenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await CreateSchedules(formState)
+    const response = await CreateSchedules({ ...formState, patron_Id: user.id })
     console.log('handle submit', response)
     setSchedule(response)
     setFormState(initialState)
@@ -45,7 +45,7 @@ const Schedule = ({ user, authenticated }) => {
           ))}
         </div>
         <button>Delete Schedule</button>
-        <button>View Exhibits</button>
+        <button onClick={() => navigate('/exhibit')}>View Exhibits</button>
       </div>
     )
   } else {
