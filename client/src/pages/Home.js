@@ -4,7 +4,6 @@ import Schedule from './Schedule'
 
 const Home = () => {
   let navigate = useNavigate()
-  const [schedule, setSchedule] = useState({})
 
   return (
     <div className="home-container col">
