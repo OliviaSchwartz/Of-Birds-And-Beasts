@@ -18,8 +18,7 @@ const SignIn = ({ setUser, toggleAuthenticated, user }) => {
     setFormValues({ email: '', password: '' })
     setUser(payload)
     toggleAuthenticated(true)
-    navigate(`/schedule/`)
-    window.location.reload()
+    navigate(`/schedule`)
   }
 
   return (

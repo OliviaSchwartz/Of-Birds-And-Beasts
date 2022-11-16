@@ -23,6 +23,7 @@ const Schedule = ({
   let navigate = useNavigate()
   const [formState, setFormState] = useState(initialState)
   const [toggle, setToggle] = useState(false)
+  const [latestSchedule, setLatestSchedule] = useState({})
   // const [scheduleExists, setScheduleExists] = useState(false)
   // const [schedule, setSchedule] = useState({})
 
@@ -34,20 +35,20 @@ const Schedule = ({
     e.preventDefault()
     const response = await CreateSchedules({ ...formState, patron_Id: user.id })
     console.log('handle submit', response)
-    setSchedule(response)
+    setLatestSchedule(response)
     setFormState(initialState)
     setScheduleExists(true)
   }
 
   useEffect(() => {
     const handleSchedule = async (id) => {
-      console.log(id)
       const data = await GetSchedulesById(id)
+      console.log(data)
       setSchedule(data)
       setToggle(true)
     }
     if (user) handleSchedule(user.id)
-  }, [scheduleExists])
+  }, [latestSchedule])
 
   const viewSchedules = (id) => {
     navigate(`${id}`)
