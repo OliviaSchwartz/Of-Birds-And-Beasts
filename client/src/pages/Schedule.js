@@ -45,6 +45,7 @@ const Schedule = () => {
           ))}
         </div>
         <button>Delete Schedule</button>
+        <button>View Exhibits</button>
       </div>
     )
   } else {
