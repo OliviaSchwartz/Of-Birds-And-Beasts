@@ -18,8 +18,8 @@ const Schedule = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const response = await CreateSchedules(formState)
-    console.log(response)
-    props.setSchedule(response.data)
+    console.log('handle submit', response)
+    setSchedule(response.data)
     setFormState(initialState)
     setScheduleExists(true)
   }
@@ -36,11 +36,11 @@ const Schedule = (props) => {
     return (
       <div className="schedule-text">
         <div className="section-title">SCHEDULE </div>
-        <div>Date: {props.schedule.date}</div>
+        <div>Date: </div>
         <br />
         <div className="exhibit-list">
           <div className="exhbit-title">Scheduled Exhibits </div>
-          {props.schedule?.exhibits?.map((exhibit) => (
+          {schedule?.exhibits?.map((exhibit) => (
             <p>{exhibit.name}</p>
           ))}
         </div>
