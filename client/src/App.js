@@ -18,6 +18,7 @@ const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
   const [schedule, setSchedule] = useState({})
+  const [scheduleExists, setScheduleExists] = useState(false)
 
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
@@ -62,19 +63,28 @@ const App = () => {
           />
           <Route path="/register" element={<Register />} />
           <Route
-            path="/schedule"
+            path="/schedule/"
             element={
               <Schedule
                 user={user}
                 authenticated={authenticated}
                 schedule={schedule}
                 setSchedule={setSchedule}
+                scheduleExists={scheduleExists}
+                setScheduleExists={setScheduleExists}
               />
             }
           />
           <Route
             path="/exhibit"
-            element={<Exhibits setSchedule={setSchedule} schedule={schedule} />}
+            element={
+              <Exhibits
+                setSchedule={setSchedule}
+                schedule={schedule}
+                scheduleExists={scheduleExists}
+                setScheduleExists={setScheduleExists}
+              />
+            }
           />
           <Route path="/animal" element={<Animals />} />
           <Route path="/exhibit/:id" element={<ExhibitAnimals />} />
