@@ -74,20 +74,30 @@ main {
   justify-content: center;
 }
 
+.welcome-message {
+  font-size: 50px;
+}
+
 .home-container,
 .signin {
   min-height: calc(100vh - 4em);
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color:#091e00;
 }
 
 .home-container img {
-  max-width: 80%;
+  max-width: 45%;
   margin: 0 auto;
+  border-radius: 15%;
+  border:#091e00 solid 5px;
 }
 
 .home-container button {
   padding: 0.8em 1.2em;
+  margin:20px;
+  margin-top: 30px;
   background-color: var(--primary-bg);
   color: var(--link-color-secondary);
   font-size: 1.1rem;
