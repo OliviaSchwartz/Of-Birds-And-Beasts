@@ -16,6 +16,7 @@ import ExhibitAnimals from './pages/ExhibitAnimals'
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  const [schedule, setSchedule] = useState({})
 
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
@@ -61,7 +62,14 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route
             path="/schedule"
-            element={<Schedule user={user} authenticated={authenticated} />}
+            element={
+              <Schedule
+                user={user}
+                authenticated={authenticated}
+                schedule={schedule}
+                setSchedule={setSchedule}
+              />
+            }
           />
           <Route path="/exhibit" element={<Exhibits />} />
           <Route path="/animal" element={<Animals />} />
