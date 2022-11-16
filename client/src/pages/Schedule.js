@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 import { GetSchedules, CreateSchedules } from '../services/ScheduleServices'
 import { useNavigate } from 'react-router-dom'
 
-const Schedule = (props) => {
+const Schedule = () => {
   const initialState = {
     date: ''
   }
   let navigate = useNavigate()
   const [formState, setFormState] = useState(initialState)
   const [scheduleExists, setScheduleExists] = useState(false)
-  const [schedule, setSchedule] = useState([])
+  const [schedule, setSchedule] = useState({})
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
@@ -19,7 +19,7 @@ const Schedule = (props) => {
     e.preventDefault()
     const response = await CreateSchedules(formState)
     console.log('handle submit', response)
-    setSchedule(response.data)
+    setSchedule(response)
     setFormState(initialState)
     setScheduleExists(true)
   }
@@ -36,7 +36,7 @@ const Schedule = (props) => {
     return (
       <div className="schedule-text">
         <div className="section-title">SCHEDULE </div>
-        <div>Date: </div>
+        <div>Date: {schedule.date} </div>
         <br />
         <div className="exhibit-list">
           <div className="exhbit-title">Scheduled Exhibits </div>
