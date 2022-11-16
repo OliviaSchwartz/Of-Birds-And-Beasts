@@ -17,6 +17,7 @@ const SignIn = ({ setUser, toggleAuthenticated }) => {
     setUser(payload)
     toggleAuthenticated(true)
     navigate('/schedule')
+    window.location.reload()
   }
 
   return (
