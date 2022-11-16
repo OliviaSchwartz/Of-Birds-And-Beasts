@@ -18,7 +18,7 @@ import { NavLink } from 'react-router-dom'
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [schedule, setSchedule] = useState({})
+  const [schedule, setSchedule] = useState([])
   const [scheduleExists, setScheduleExists] = useState(false)
 
   const handleLogOut = () => {

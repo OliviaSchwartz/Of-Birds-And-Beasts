@@ -22,6 +22,7 @@ const Schedule = ({
   let { id } = useParams()
   let navigate = useNavigate()
   const [formState, setFormState] = useState(initialState)
+  const [toggle, setToggle] = useState(false)
   // const [scheduleExists, setScheduleExists] = useState(false)
   // const [schedule, setSchedule] = useState({})
 
@@ -43,9 +44,10 @@ const Schedule = ({
       console.log(id)
       const data = await GetSchedulesById(id)
       setSchedule(data)
+      setToggle(true)
     }
-    handleSchedule(user.id)
-  }, [])
+    if (user) handleSchedule(user.id)
+  }, [scheduleExists])
 
   const viewSchedules = (id) => {
     navigate(`${id}`)
@@ -75,13 +77,15 @@ const Schedule = ({
       </div>
       <div className="grid col-4">
         <div className="grid col-4">
-          {schedule.map((schedule) => (
-            <ScheduleCard
-              key={schedule.id}
-              date={schedule.date}
-              onClick={() => viewSchedules(schedule.id)}
-            />
-          ))}
+          {toggle
+            ? schedule.map((schedule) => (
+                <ScheduleCard
+                  key={schedule.id}
+                  date={schedule.date}
+                  onClick={() => viewSchedules(schedule.id)}
+                />
+              ))
+            : ''}
         </div>
       </div>
     </div>
