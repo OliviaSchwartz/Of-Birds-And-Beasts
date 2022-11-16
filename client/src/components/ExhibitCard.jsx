@@ -25,11 +25,11 @@ const ExhibitDisplay = ({setSchedule, schedule_Id, onClick, name, image, exhibit
 
 
     return (
-        <div className="card exhibit-card"onClick={() => onClick(exhibit)}  >
+        <div className="card exhibit-card" >
             <div className="info-wrapper flex-col">
                 <h3 className="runDateDisplay"> {name}</h3>
                 <img className="cardDisplay" src={image} />
-                <button>View Animals</button>
+                <button onClick={() => onClick(exhibit)} >View Animals</button>
                 <button onClick={addToSchedule}>Add To Schedule</button>
             </div>
 
