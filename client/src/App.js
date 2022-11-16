@@ -63,7 +63,7 @@ const App = () => {
           />
           <Route path="/register" element={<Register />} />
           <Route
-            path="/schedule/"
+            path="/schedule"
             element={
               <Schedule
                 user={user}
@@ -74,6 +74,10 @@ const App = () => {
                 setScheduleExists={setScheduleExists}
               />
             }
+          />
+          <Route
+            path="/schedule/:id"
+            element={<Schedule user={user} authenticated={authenticated} />}
           />
           <Route
             path="/exhibit"
