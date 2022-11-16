@@ -75,13 +75,12 @@ const Schedule = ({
       </div>
       <div className="grid col-4">
         <div className="grid col-4">
-          {schedule.map((schedule) => (
-            <ScheduleCard
-              key={schedule.id}
-              date={schedule.date}
-              onClick={() => viewSchedules(schedule.id)}
-            />
-          ))}
+          {/* {schedule.map((schedule) => ( */}
+          <ScheduleCard
+            key={schedule.id}
+            date={schedule.date}
+            onClick={() => viewSchedules(schedule.id)}
+          />
         </div>
       </div>
     </div>
