@@ -78,7 +78,16 @@ const App = () => {
           />
           <Route
             path="/schedule/:id"
-            element={<ScheduleCard user={user} authenticated={authenticated} />}
+            element={
+              <ScheduleCard
+                user={user}
+                authenticated={authenticated}
+                schedule={schedule}
+                setSchedule={setSchedule}
+                scheduleExists={scheduleExists}
+                setScheduleExists={setScheduleExists}
+              />
+            }
           />
           <Route
             path="/exhibit"

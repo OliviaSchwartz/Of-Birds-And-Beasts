@@ -35,3 +35,12 @@ export const UpdateSchedule = async (data, id) => {
     throw error
   }
 }
+
+export const DeleteSchedule = async (id) => {
+  try {
+    const res = await Client.delete(`/schedule/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

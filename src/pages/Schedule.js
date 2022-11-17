@@ -45,10 +45,10 @@ const Schedule = ({
       const data = await GetSchedulesById(id)
       console.log(data)
       setSchedule(data)
-      setToggle(true)
+      // setToggle(true)
     }
     if (user) handleSchedule(user.id)
-  }, [latestSchedule])
+  }, [latestSchedule, toggle])
 
   const viewSchedules = (id) => {
     navigate(`${id}`)
@@ -78,15 +78,16 @@ const Schedule = ({
       </div>
       <div className="grid col-4">
         <div className="grid col-4">
-          {toggle
-            ? schedule.map((schedule) => (
-                <ScheduleCard
-                  key={schedule.id}
-                  date={schedule.date}
-                  onClick={() => viewSchedules(schedule.id)}
-                />
-              ))
-            : ''}
+          {schedule.map((schedule) => (
+            <ScheduleCard
+              key={schedule.id}
+              date={schedule.date}
+              schedule_Id={schedule.id}
+              setToggle={setToggle}
+              toggle={toggle}
+              // onClick={() => viewSchedules(schedule.id)}
+            />
+          ))}
         </div>
       </div>
     </div>
