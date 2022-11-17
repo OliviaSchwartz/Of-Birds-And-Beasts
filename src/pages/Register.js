@@ -80,13 +80,14 @@ const Register = ({ setUser, toggleAuthenticated }) => {
             />
           </div>
           <button
+            className="exhibit-button"
             disabled={
               !formValues.email ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }
           >
-            Sign In
+            Register
           </button>
         </form>
       </div>

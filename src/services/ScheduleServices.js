@@ -27,9 +27,9 @@ export const CreateSchedules = async (data, id) => {
   }
 }
 
-export const UpdateSchedule = async (data, id) => {
+export const UpdateSchedule = async (schedule_Id, data) => {
   try {
-    const res = await Client.put(`/schedule/${id}`, data)
+    const res = await Client.put(`/schedule/${schedule_Id}`, data)
     return res.data
   } catch (error) {
     throw error

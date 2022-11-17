@@ -30,7 +30,6 @@ const ExhibitDisplay = ({setSchedule, onClick, name, image, exhibit, schedule, s
                 <h3 className="runDateDisplay"> {name}</h3>
                 <img className="cardDisplayExhibit" src={image} />
                 <button className="exhibit-button" onClick={() => onClick(exhibit)} >View Animals</button>
-                <button className="exhibit-button" onClick={addToSchedule}>Add To Schedule</button>
             </div>
 
         </div>

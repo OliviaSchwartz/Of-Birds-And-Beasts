@@ -26,6 +26,7 @@ const Exhibits = () => {
           key={exhibit.id}
           name={exhibit.name}
           image={exhibit.image}
+          exhibit_Id={exhibit.id}
           onClick={() => viewAnimals(exhibit.id)}
         />
       ))}

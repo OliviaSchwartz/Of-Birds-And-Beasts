@@ -24,8 +24,6 @@ const Schedule = ({
   const [formState, setFormState] = useState(initialState)
   const [toggle, setToggle] = useState(false)
   const [latestSchedule, setLatestSchedule] = useState({})
-  // const [scheduleExists, setScheduleExists] = useState(false)
-  // const [schedule, setSchedule] = useState({})
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
@@ -43,7 +41,6 @@ const Schedule = ({
   useEffect(() => {
     const handleSchedule = async (id) => {
       const data = await GetSchedulesById(id)
-      console.log(data)
       setSchedule(data)
       // setToggle(true)
     }
@@ -85,6 +82,8 @@ const Schedule = ({
               schedule_Id={schedule.id}
               setToggle={setToggle}
               toggle={toggle}
+              setLatestSchedule={setLatestSchedule}
+              latestSchedule={latestSchedule}
               // onClick={() => viewSchedules(schedule.id)}
             />
           ))}
@@ -94,7 +93,9 @@ const Schedule = ({
   ) : (
     <div className="protected">
       <h3>Oops! You must be signed in to do that!</h3>
-      <button onClick={() => navigate('/signin')}>Sign In</button>
+      <button className="exhibit-button" onClick={() => navigate('/signin')}>
+        Sign In
+      </button>
     </div>
   )
 }
