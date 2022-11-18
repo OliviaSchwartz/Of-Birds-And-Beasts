@@ -42,12 +42,12 @@ const handleSubmit = async (e) => {
 
 
     return (
-        <div className="card exhibit-card" >
+        <div className="card schedule-card" >
 <div className="schedule-info-wrapper flex-col">
-                <h3 className="runDateDisplay item1"> {props.date}</h3>
+                <h3 className="runDateDisplay item1 schedule-card-date"> {props.date}</h3>
                 <form className="form" onSubmit={handleSubmit}>
                     <label className="label exhibitField" htmlFor="date">
-                    date:{' '}
+                    Date:{' '}
                     </label>
                         <input
                     className="input"
