@@ -21,6 +21,8 @@
 - GitHub
 - VS Code
 - Heroku
+ - [Deployed Front End](https://of-birds-and-of-beasts.herokuapp.com/)
+ - [Deployed Back End](https://pure-citadel-98901.herokuapp.com/)
 - Insomnia
 - PostreSQL
 - Sequelize
