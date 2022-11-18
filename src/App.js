@@ -22,7 +22,6 @@ const App = () => {
   const [scheduleExists, setScheduleExists] = useState(false)
 
   const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
@@ -30,7 +29,6 @@ const App = () => {
 
   const checkToken = async () => {
     const user = await CheckSession()
-    console.log('This is check token', user)
     setUser(user)
     toggleAuthenticated(true)
   }
@@ -38,7 +36,6 @@ const App = () => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      console.log('Inside useEffect')
       checkToken()
     }
   }, [])

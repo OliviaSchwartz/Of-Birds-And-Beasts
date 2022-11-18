@@ -32,7 +32,6 @@ const Schedule = ({
   const handleSubmit = async (e) => {
     e.preventDefault()
     const response = await CreateSchedules({ ...formState, patron_Id: user.id })
-    console.log('handle submit', response)
     setLatestSchedule(response)
     setFormState(initialState)
     setScheduleExists(true)
@@ -42,7 +41,6 @@ const Schedule = ({
     const handleSchedule = async (id) => {
       const data = await GetSchedulesById(id)
       setSchedule(data)
-      // setToggle(true)
     }
     if (user) handleSchedule(user.id)
   }, [latestSchedule, toggle])
@@ -91,7 +89,6 @@ const Schedule = ({
               toggle={toggle}
               setLatestSchedule={setLatestSchedule}
               latestSchedule={latestSchedule}
-              // onClick={() => viewSchedules(schedule.id)}
             />
           ))}
         </div>

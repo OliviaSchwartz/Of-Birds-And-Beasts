@@ -15,7 +15,6 @@ const ExhibitDisplay = ({setSchedule, onClick, name, image, exhibit, schedule, s
           } else {
             const newExhibit = await UpdateSchedule(exhibit),
              updateSchedule = await GetSchedules()
-            console.log(updateSchedule)
             setSchedule( updateSchedule.data)
           }
         }

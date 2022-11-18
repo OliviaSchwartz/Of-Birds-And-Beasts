@@ -25,7 +25,6 @@ const ExhibitAnimals = () => {
           image={animal.image}
           species={animal.species}
           information={animal.information}
-          // onClick={() => viewAnimals(exhibit.id)}
         />
       ))}
     </div>

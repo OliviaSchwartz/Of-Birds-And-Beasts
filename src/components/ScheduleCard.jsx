@@ -35,7 +35,6 @@ const handleSubmit = async (e) => {
 
     const deleteOneSchedule = async (e) => {
         e.preventDefault()
-        console.log(props.schedule_Id)
         await DeleteSchedule(props.schedule_Id)
         props.setToggle(!props.toggle)
     }
@@ -83,12 +82,3 @@ const handleSubmit = async (e) => {
 }
 
 export default ScheduleDisplay
-
-
-// schedule, schedule_Id, exhibit_Id, date
-// onClick={()=> onClick(props.schedule)}
-// const handleSubmit = async (e) => {
-//     e.preventDefault()
-//     await UpdateSchedule(props.schedule_Id, formState)
-//     props.setToggle(!props.toggle)
-//   }
