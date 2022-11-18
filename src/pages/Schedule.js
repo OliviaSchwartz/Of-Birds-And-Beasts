@@ -25,7 +25,6 @@ const Schedule = ({
   const handleSubmit = async (e) => {
     e.preventDefault()
     const response = await CreateSchedules({ ...formState, patron_Id: user.id })
-    console.log('handle submit', response)
     setLatestSchedule(response)
     setFormState(initialState)
     setScheduleExists(true)
@@ -59,14 +58,16 @@ const Schedule = ({
             value={formState.date}
             required
           />
-          <button className="submit-button" type="submit">
+          <button className="create-schedule-button" type="submit">
             Create Schedule
           </button>
         </form>
         <div className="exhibit-list">
+          <h2>These are our Exhibits:</h2>
           <h2> Aquarium, Aviary, Forest, Desert, Reptiles and Frozen Tundra</h2>
         </div>
       </div>
+<<<<<<< HEAD
       <div className="grid col-4">
         <div className="grid col-4">
           {schedule.map((schedule) => (
@@ -82,12 +83,32 @@ const Schedule = ({
             />
           ))}
         </div>
+=======
+
+      <div className="grid col-4 card-grid">
+        {schedule.map((schedule) => (
+          <ScheduleCard
+            key={schedule.id}
+            date={schedule.date}
+            exhibit_list={schedule.exhibit_list}
+            schedule_Id={schedule.id}
+            setToggle={setToggle}
+            toggle={toggle}
+            setLatestSchedule={setLatestSchedule}
+            latestSchedule={latestSchedule}
+            // onClick={() => viewSchedules(schedule.id)}
+          />
+        ))}
+>>>>>>> origin
       </div>
     </div>
   ) : (
     <div className="protected">
       <h3>Oops! You must be signed in to do that!</h3>
-      <button className="exhibit-button" onClick={() => navigate('/signin')}>
+      <button
+        className="delete-schedule-button"
+        onClick={() => navigate('/signin')}
+      >
         Sign In
       </button>
     </div>

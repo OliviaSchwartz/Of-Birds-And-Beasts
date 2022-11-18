@@ -31,7 +31,6 @@ const handleSubmit = async (e) => {
 
     const deleteOneSchedule = async (e) => {
         e.preventDefault()
-        console.log(props.schedule_Id)
         await DeleteSchedule(props.schedule_Id)
         props.setToggle(!props.toggle)
     }
@@ -39,18 +38,18 @@ const handleSubmit = async (e) => {
 
 
     return (
-        <div className="card exhibit-card" >
+        <div className="card schedule-card" >
 <div className="schedule-info-wrapper flex-col">
-                <h3 className="runDateDisplay item1"> {props.date}</h3>
+                <h3 className="runDateDisplay item1 schedule-card-date"> {props.date}</h3>
                 <form className="form" onSubmit={handleSubmit}>
                     <label className="label exhibitField" htmlFor="date">
-                    date:{' '}
+                    Date:{' '}
                     </label>
                         <input
                     className="input"
                 type="text"
                 id="date"
-                placeholder="Udate your visit date"
+                placeholder= "Update your visit date here"
                 cols="30"
                 onChange={handleChange}
                 value={formState.date}
@@ -79,12 +78,3 @@ const handleSubmit = async (e) => {
 }
 
 export default ScheduleDisplay
-
-
-// schedule, schedule_Id, exhibit_Id, date
-// onClick={()=> onClick(props.schedule)}
-// const handleSubmit = async (e) => {
-//     e.preventDefault()
-//     await UpdateSchedule(props.schedule_Id, formState)
-//     props.setToggle(!props.toggle)
-//   }
