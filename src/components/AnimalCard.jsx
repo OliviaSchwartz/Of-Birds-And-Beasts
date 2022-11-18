@@ -1,6 +1,3 @@
-import Animals from "../pages/Animals"
-import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom"
 
 const AnimalDisplay = ({onClick, animal, name, image, species, information}) => {
 

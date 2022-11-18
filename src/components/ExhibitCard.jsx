@@ -1,28 +1,5 @@
-import Exhibits from "../pages/Exhibits"
-import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom"
-import { UpdateSchedule, GetSchedules } from "../services/ScheduleServices"
 
-const ExhibitDisplay = ({setSchedule, onClick, name, image, exhibit, schedule, scheduleExists, setScheduleExists}) => {
-
-
-    const addToSchedule = async (e) => {
-        e.preventDefault()
-
-        const validateSchedule = async () => {
-          if (scheduleExists = false)  {
-            alert('Create your schedule first, then add exhibits')
-          } else {
-            const newExhibit = await UpdateSchedule(exhibit),
-             updateSchedule = await GetSchedules()
-            console.log(updateSchedule)
-            setSchedule( updateSchedule.data)
-          }
-        }
-        validateSchedule()
-      }
-
-
+const ExhibitDisplay = ({onClick, name, image, exhibit}) => {
 
     return (
         <div className="card exhibit-card" >

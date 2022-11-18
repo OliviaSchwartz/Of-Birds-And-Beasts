@@ -9,11 +9,8 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import Exhibits from './pages/Exhibits'
 import Animals from './pages/Animals'
-import ExhibitCard from './components/ExhibitCard'
-import AnimalCard from './components/AnimalCard'
 import ScheduleCard from './components/ScheduleCard'
 import ExhibitAnimals from './pages/ExhibitAnimals'
-import { NavLink } from 'react-router-dom'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -22,7 +19,6 @@ const App = () => {
   const [scheduleExists, setScheduleExists] = useState(false)
 
   const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
@@ -30,7 +26,6 @@ const App = () => {
 
   const checkToken = async () => {
     const user = await CheckSession()
-    console.log('This is check token', user)
     setUser(user)
     toggleAuthenticated(true)
   }
@@ -38,7 +33,6 @@ const App = () => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      console.log('Inside useEffect')
       checkToken()
     }
   }, [])

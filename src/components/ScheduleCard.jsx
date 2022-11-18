@@ -1,8 +1,5 @@
-import Schedule from "../pages/Schedule"
-import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom"
 import { DeleteSchedule, UpdateSchedule } from "../services/ScheduleServices"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const ScheduleDisplay = (props) => {
 
@@ -11,7 +8,6 @@ const ScheduleDisplay = (props) => {
       exhibit_list: ''
     }
     const [formState, setFormState] = useState(initialState)
-    const [updatedSchedule, setUpdatedSchedule] = useState({})
 
 
     const handleChange = (e) => {
