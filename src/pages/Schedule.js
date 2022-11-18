@@ -54,9 +54,12 @@ const Schedule = ({
   return user && authenticated ? (
     <div>
       <div className="schedule-form">
+        <h2>
+          Use this scheduling tool to plan your visit to Of Birds and Beasts
+        </h2>
         <form className="form" onSubmit={handleSubmit}>
           <label className="label dateField" htmlFor="date">
-            Date:{' '}
+            Date of visit:{' '}
           </label>
           <input
             className="input"
@@ -72,6 +75,9 @@ const Schedule = ({
             Create Schedule
           </button>
         </form>
+        <div className="exhibit-list">
+          <h2> Aquarium, Aviary, Forest, Desert, Reptiles and Frozen Tundra</h2>
+        </div>
       </div>
       <div className="grid col-4">
         <div className="grid col-4">
@@ -79,6 +85,7 @@ const Schedule = ({
             <ScheduleCard
               key={schedule.id}
               date={schedule.date}
+              exhibit_list={schedule.exhibit_list}
               schedule_Id={schedule.id}
               setToggle={setToggle}
               toggle={toggle}

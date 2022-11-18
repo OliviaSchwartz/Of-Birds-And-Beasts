@@ -5,25 +5,33 @@ import { DeleteSchedule, UpdateSchedule } from "../services/ScheduleServices"
 import { useEffect, useState } from 'react'
 
 const ScheduleDisplay = (props) => {
-    let {id} = useParams()
+
     const initialState = {
-      date: ''
+      date: '',
+      exhibit_list: ''
     }
     const [formState, setFormState] = useState(initialState)
-    const [updatedSchedule, setUpdatedSchedule] = useState('')
+    const [updatedSchedule, setUpdatedSchedule] = useState({})
 
 
     const handleChange = (e) => {
         setFormState({ ...formState, [e.target.id]: e.target.value })
     }
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const response = await UpdateSchedule({ ...formState })
-        console.log('handle submit', response)
-        props.setLatestSchedule(response)
-        setFormState(initialState)
-        // props.setScheduleExists(true)
-      }
+
+
+
+const handleSubmit = async (e) => {
+    e.preventDefault()
+    await UpdateSchedule(props.schedule_Id, formState)
+    props.setToggle(!props.toggle)
+  }
+
+
+
+
+
+
+
 
     const deleteOneSchedule = async (e) => {
         e.preventDefault()
@@ -36,9 +44,8 @@ const ScheduleDisplay = (props) => {
 
     return (
         <div className="card exhibit-card" >
-            <div className="schedule-info-wrapper flex-col">
+<div className="schedule-info-wrapper flex-col">
                 <h3 className="runDateDisplay item1"> {props.date}</h3>
-                <h4 className="cardDisplay item3"> Exhibits:</h4>
                 <form className="form" onSubmit={handleSubmit}>
                     <label className="label exhibitField" htmlFor="date">
                     date:{' '}
@@ -47,13 +54,27 @@ const ScheduleDisplay = (props) => {
                     className="input"
                 type="text"
                 id="date"
-                placeholder="date-update"
+                placeholder="Udate your visit date"
                 cols="30"
                 onChange={handleChange}
-                value={formState}
+                value={formState.date}
                 required
         />
-                <button className="exhibit-button" onClick={handleSubmit}>Add Exhibits</button>
+          <h4 className="cardDisplay item3"> Exhibits: {props.exhibit_list}</h4>
+         <label className="label exhibitField" htmlFor="exhibit_list">
+                    Exhibits:{' '}
+                    </label>
+                        <input
+                    className="input"
+                type="text"
+                id="exhibit_list"
+                placeholder="Add Your Exhibits Here"
+                cols="30"
+                onChange={handleChange}
+                value={formState.exhibit_list}
+
+        />
+                <button className="exhibit-button" onClick={handleSubmit}>Update Schedule</button>
             </form>
                 <button className="exhibit-button" onClick={deleteOneSchedule}>Delete Schedule</button>
             </div>
@@ -66,3 +87,8 @@ export default ScheduleDisplay
 
 // schedule, schedule_Id, exhibit_Id, date
 // onClick={()=> onClick(props.schedule)}
+// const handleSubmit = async (e) => {
+//     e.preventDefault()
+//     await UpdateSchedule(props.schedule_Id, formState)
+//     props.setToggle(!props.toggle)
+//   }
