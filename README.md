@@ -2,7 +2,11 @@
 
 ## Date: 11/18/2022
 
-### By: Olivia Schwartz, Jaelen Venable, David Caldwell, Marley Judd
+### By: David Caldwell, Jaelen Venable, Marley Judd, Olivia Schwartz
+
+---
+
+<img src="./images/HomePage.png" width ="500px">
 
 ---
 
@@ -19,6 +23,7 @@
 - Heroku
 - Insomnia
 - PostreSQL
+- Sequelize
 - Trello
   - [Trello Board Here](https://trello.com/b/fQVpFC3c/u3project)
 - Component Hierarchy Diagram
@@ -26,36 +31,69 @@
 - ERD
   - [ERD Here](https://app.diagrams.net/#G1Uj7JKQTusMBAehPCcaLVUnKKjAwQoX6E)
 - Back End Repository
-  - [Repository Here](https://github.com/OliviaSchwartz/Of-Birds-And-Beasts-Back-End)
+  - [Back-End Repository Here](https://github.com/OliviaSchwartz/Of-Birds-And-Beasts-Back-End)
+  - [Front-End Repository Here](https://github.com/OliviaSchwartz/Of-Birds-And-Beasts)
 
 ---
 
 ### **_Getting Started_**
 
-#### Once at the landing page, choose to register, and from there make sure you login in. Once logged in, explore the different animal exhibits to get an idea of what animals you'd like to see. When you're ready to plan your visit, navigate to the Schedule to create a schedule and add the exhibits.
+#### Once at the landing page, choose to register, and from there make sure you login. Once logged in, explore the different animal exhibits to get an idea of what animals you'd like to see. When you're ready to plan your visit, navigate to the Schedule to create a schedule and add the exhibits, change the date of your schedule, or delete a schedule that you no longer need.
 
 ---
 
 ### **_Screenshots_**
 
-#### Future Screenshot 1
+---
 
-#### Future Screenshot 2
+#### Register Page
 
-#### Future Screenshot 3
+<img src="./images/RegisterPage.png" width ="500px">
+
+---
+
+#### Signin Page
+
+<img src="./images/SigninPage.png" width ="500px">
+
+---
+
+#### Exhibits Page
+
+<img src="./images/ExhibitsPage.png" width ="500px">
+
+---
+
+#### Animals Page
+
+<img src="./images/AnimalsPage.png" width ="500px">
+
+---
+
+#### Schedules Page
+
+<img src="./images/SchedulePage.png" width ="500px">
 
 ---
 
 ### **_Future Updates_**
 
-- [] Future Update 1
-- [] Future Update 2
-- [] Future Update 3
+- [] Buttons to add Exhibit to Schedule
+- [] Update more than Date on Schedule
+- [] Change welcome from email to Patron name
 
 ---
 
 ### **_Credits_**
 
-##### Future Credit 1
+[Wikipedia](https://en.wikipedia.org/wiki/Wiki) - all animal information
 
-##### Future Credit 2
+[Pexels](https://www.pexels.com/) - all images
+
+[Sequelize](https://sequelize.org/)
+
+[MDN Docs](https://developer.mozilla.org/en-US/)
+
+[W3Schools](https://www.w3schools.com/)
+
+[Stack Overflow](https://stackoverflow.com/)
