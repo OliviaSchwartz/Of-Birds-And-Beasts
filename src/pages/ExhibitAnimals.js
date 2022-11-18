@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import { GetAnimalType } from '../services/AnimalsServices'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import AnimalCard from '../components/AnimalCard'
 
 const ExhibitAnimals = () => {
   let { id } = useParams()
-  let navigate = useNavigate()
   const [animals, setAnimals] = useState([])
 
   useEffect(() => {

@@ -1,6 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import Schedule from './Schedule'
 
 const Home = () => {
   let navigate = useNavigate()

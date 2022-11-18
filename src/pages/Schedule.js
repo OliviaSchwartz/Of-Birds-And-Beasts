@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react'
-import {
-  GetSchedules,
-  CreateSchedules,
-  GetSchedulesById
-} from '../services/ScheduleServices'
+import { CreateSchedules, GetSchedulesById } from '../services/ScheduleServices'
 import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 import ScheduleCard from '../components/ScheduleCard'
 
 const Schedule = ({
@@ -13,13 +8,11 @@ const Schedule = ({
   authenticated,
   setSchedule,
   schedule,
-  scheduleExists,
   setScheduleExists
 }) => {
   const initialState = {
     date: ''
   }
-  let { id } = useParams()
   let navigate = useNavigate()
   const [formState, setFormState] = useState(initialState)
   const [toggle, setToggle] = useState(false)
@@ -44,10 +37,6 @@ const Schedule = ({
     }
     if (user) handleSchedule(user.id)
   }, [latestSchedule, toggle])
-
-  const viewSchedules = (id) => {
-    navigate(`${id}`)
-  }
 
   return user && authenticated ? (
     <div>

@@ -9,11 +9,8 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import Exhibits from './pages/Exhibits'
 import Animals from './pages/Animals'
-import ExhibitCard from './components/ExhibitCard'
-import AnimalCard from './components/AnimalCard'
 import ScheduleCard from './components/ScheduleCard'
 import ExhibitAnimals from './pages/ExhibitAnimals'
-import { NavLink } from 'react-router-dom'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
