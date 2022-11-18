@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
                     className="input"
                 type="text"
                 id="date"
-                placeholder="Udate your visit date"
+                placeholder= "Update your visit date here"
                 cols="30"
                 onChange={handleChange}
                 value={formState.date}
